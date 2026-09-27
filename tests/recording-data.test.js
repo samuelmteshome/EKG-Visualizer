@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {validateRecord,parseCSV,parseWFDB} from '../web/recording-data.js';
+test('CSV preserves voltage and normalizes lead names',()=>{const r=parseCSV('time_s,II,AVR\n0,1,-0.5\n0.002,2,-1');assert.equal(r.sampleRateHz,500);assert.deepEqual(r.leads,['II','aVR']);assert.deepEqual(r.samples[1],[2,-1]);});
+test('reject missing, nonfinite, duplicate, and irregular samples',()=>{for(const s of ['time_s,II\n0,1\n.002,','time_s,II\n0,1\n.002,NaN','time_s,II,II\n0,1,2\n.002,3,4','time_s,II\n0,1\n.002,2\n.008,3'])assert.throws(()=>parseCSV(s));});
+test('format 16 interleaving and baseline calibration',()=>{const bytes=new ArrayBuffer(8),v=new DataView(bytes);[1100,-500,2100,500].forEach((n,i)=>v.setInt16(i*2,n,true));const r=parseWFDB('demo 2 500 2\ndemo.dat 16 1000(100)/mV 16 0 0 0 0 II\ndemo.dat 16 1000/mV 16 0 0 0 0 V1',bytes,'demo.dat');assert.deepEqual(r.samples,[[1,-.5],[2,.5]]);assert.equal(r.duration,.002);assert.throws(()=>parseWFDB('demo 2 500 2\ndemo.dat 212 1000/mV 16 0 0 0 0 II',bytes,'demo.dat'));});
+test('reject unknown units, malformed leads, and empty recordings',()=>{assert.throws(()=>validateRecord({schemaVersion:1,units:'V',sampleRateHz:500,leads:['II'],samples:[[1],[2]]}));});

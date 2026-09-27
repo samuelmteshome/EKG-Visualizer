@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+node_modules/
+data/
+inbox/
+processed/
+*.hea
+*.dat
+*.pdf
+*.csv
