@@ -2,7 +2,7 @@
 
 ## Without editing code
 
-Use the rhythm menu for the 14 teaching examples; the speed menu for slow motion; the lead buttons for the viewing direction; and the anatomy and lead toggles for label visibility. Under **Customize this view**, adjust ECG line width and display gain. These settings save on the current device. Reset appearance restores defaults.
+Use the rhythm menu for the 14 teaching examples; the speed menu for slow motion; the lead buttons for the viewing direction; and the anatomy and lead toggles for label visibility. Under **Customize this view**, adjust ECG line width, heart signal thickness, and display gain. These settings save on the current device. Reset appearance restores defaults.
 
 The recordings page has its own lead, playback speed, time window, and gain controls. Gain changes screen scale only; exported data keeps its original values.
 
@@ -27,3 +27,7 @@ For a simple text change, open a file on GitHub and use the pencil button, or ed
 - Propagation timing: `web/conduction.js`.
 
 Adding a pattern requires updating waveform generation and mechanism timing together, not merely adding a dropdown label. Preserve the shared playback clock. Do not connect an arbitrary imported ECG to a synthetic activation sequence without clearly stated assumptions and reviewed landmarks.
+
+## Bundle-branch block teaching
+
+Select RBBB or LBBB. A red × locates the schematic blocked branch. Mint marks the intact ventricular pathway; orange dashed paths show delayed myocardial spread. The comparison panel describes both ventricles at the current playhead. Use the three numbered buttons to pause in early QRS, transseptal spread, or delayed ventricular activation. Purple still denotes tissue recovery. These are illustrative mechanisms, not patient-specific maps.

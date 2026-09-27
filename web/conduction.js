@@ -24,7 +24,7 @@ let samples=network.map((edge,index)=>{
 let start=edge.kind==='atrial'?atrialStart+edge.start:q+edge.start*(p.qrs&&p.qrs<.09?p.qrs/.09:1),end=edge.kind==='atrial'?atrialStart+edge.end:q+edge.end*(p.qrs&&p.qrs<.09?p.qrs/.09:1);
 let enabled=!vf&&!(edge.kind==='atrial'&&(af||flutter));
 if(edge.kind!=='atrial'&&ectopic)enabled=false;
-if(blocked&&edge.side===blocked)enabled=false;
+if(blocked&&edge.side===blocked&&!edge.id.endsWith('-proximal'))enabled=false;
 const progress=(t-start)/(end-start),moving=enabled&&progress>=0&&progress<=1;
 const isMuscle=edge.kind==='tissue';const recover=isMuscle&&!vf&&Math.abs(t-recoveryCenter)<=rw? .45+.55*Math.exp(-Math.pow((t-recoveryCenter+(index%4-1.5)*rw*.25)/(rw*.45),2)):0;
 let chaos=0;if((vf&&edge.kind!=='atrial')||(af&&edge.kind==='atrial'))chaos=Math.pow(.5+.5*Math.sin(t*48+index*2.7),6);
