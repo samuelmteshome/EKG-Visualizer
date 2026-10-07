@@ -7,9 +7,13 @@ export function initMobileLeadLayout(onLayout){
  const button=document.getElementById('changeLeadStrip');
  const anchor=document.createComment('Desktop selected-strip location');
  strip.before(anchor);
+ const lesson=document.getElementById('blockLesson');
+ const impulse=document.querySelector('.conduction-status');
+ const lessonAnchor=document.createComment('Desktop pathology lesson location');
+ lesson.before(lessonAnchor);
  function layout(){
-   if(media.matches)scene.after(strip);
-   else anchor.after(strip);
+   if(media.matches){scene.after(strip);impulse.after(lesson);}
+   else {anchor.after(strip);lessonAnchor.after(lesson);}
    onLayout();
  }
  const behavior=()=>matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth';
