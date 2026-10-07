@@ -43,3 +43,15 @@ On phones, tap a structure to reveal its detail and tap Close or outside to dism
 ## Mobile lead navigation
 
 On narrow screens, the selected ECG strip and time slider sit directly under the heart diagram. Use **Change lead strip** to jump to the twelve lead choices. Selecting a lead returns to the heart and updated strip. The desktop layout is unchanged, including when resizing between layouts.
+
+## Electrical labels and plumbing
+
+SA node, AV node, His bundle, bundle branches and Purkinje fibers stay labeled in both electrical views. Hover or tap their labels or locations for anatomical explanations; nodes also show the cellular illustration. The checkbox now controls chamber labels only.
+
+Choose **Plumbing · flow / US**, then **Blood flow** or **Ultrasound-style**. Both use the ECG's simulation clock, pause and time slider. The circulation schematic shows the body, lungs, four chambers and valve-gated flow. The echo-style four-chamber diagram shows filling and ventricular contraction; outflow valves are outside this slice. It is not actual ultrasound, Doppler, or patient-specific imaging.
+
+Mechanical animation currently supports sinus rhythm, sinus bradycardia/tachycardia and first-degree AV block. Other patterns show a static diagram with an explicit limitation and a button to select sinus rhythm. In particular, VF is never illustrated as normal effective pumping. Electrical lead selection stays available in plumbing mode; select Frontal or Transverse to return to electrical pathways.
+
+## Injury-region teaching
+
+Anterior and inferior ST-elevation examples show a persistent hatched LV territory. Its border responds to activation, ST and recovery phases. The tissue region is illustrative, not an infarct-size measurement or proof of necrosis. A mechanism panel relates possible coronary ischemia to altered ventricular-cell potentials and injury currents, with separate ST and T-wave inspection buttons. The normal/ischemic cell curves are qualitative; the waveform remains a synthetic lead example, not a solved injury-current simulation. The frontal view projects the territory; transverse anterior/posterior orientation is explicit.
