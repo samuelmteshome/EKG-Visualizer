@@ -39,3 +39,7 @@ Hover over a chamber or conduction pathway for its name. SA/AV node hover reveal
 The model uses a study-relative scale: 1× is 0.1 real time, 1.25× is 0.125, and the fastest 2.5× is 0.25. This changes playback only, never the ECG time axis or heart rate.
 
 On phones, tap a structure to reveal its detail and tap Close or outside to dismiss. “Start tutorial · new to ECGs?” opens an optional seven-step first-year medical student guide. It explains ECG waves, the conduction sequence, lead viewpoints, study speed, pathology and the separate recording viewer.
+
+## Mobile lead navigation
+
+On narrow screens, the selected ECG strip and time slider sit directly under the heart diagram. Use **Change lead strip** to jump to the twelve lead choices. Selecting a lead returns to the heart and updated strip. The desktop layout is unchanged, including when resizing between layouts.
