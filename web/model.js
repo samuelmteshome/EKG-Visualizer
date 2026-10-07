@@ -28,7 +28,7 @@ export const leads=[
 {name:'V5',chest:4,region:'Lateral',pos:[1.52,-.70,1.15],desc:'Left anterior axillary line, horizontally level with V4. Compared with Wilson central terminal. Views lateral electrical forces.'},
 {name:'V6',chest:5,region:'Lateral',pos:[1.94,-.70,.28],desc:'Left midaxillary line, horizontally level with V4. Compared with Wilson central terminal. Views lateral electrical forces.'}
 ];
-export let state={key:'sinus',lead:1,time:0,playing:!matchMedia('(prefers-reduced-motion: reduce)').matches,speed:.25};
+export let state={key:'sinus',lead:1,time:0,playing:!matchMedia('(prefers-reduced-motion: reduce)').matches,speed:.1};
 export let beats=[],atria=[];
 export function configure(key){if(!patterns[key])throw Error('Unknown rhythm');state.key=key;state.time=0;const p=patterns[key],rr=60/(p.rate||75);beats=[];atria=[];if(key==='vf')return;
 if(key==='af'){let t=-2;for(let n=0;t<9;n++){t+=rr*(.62+(.5+.5*Math.sin(n*4.37))*.78);beats.push({q:t,d:p.qrs,pvc:false});}}

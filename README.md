@@ -6,7 +6,7 @@ Explore how the twelve ECG leads relate to a heart cross-section, then open your
 
 ## Start here — no coding required
 
-1. Open the viewer above. Start with **Normal sinus rhythm** and **¼× Study** speed.
+1. Open the viewer above. Start with **Normal sinus rhythm** and **1× Study** speed.
 2. Choose a lead. The diagram switches between the frontal and transverse cross-sections.
 3. Pause, drag the time slider, or click a peak or trough to inspect that moment.
 4. Open **Customize this view** to change line thickness and display gain. Preferences stay on your device.
